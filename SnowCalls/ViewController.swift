@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     //MARK: Properties
     
     @IBOutlet weak var messageInput: UITextView!
@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         // Create empty sting - will become the out
         var outputString = ""
         
+        
         for singleCharacter in messageInput{
             
             switch singleCharacter.lowercased() {
@@ -59,6 +60,8 @@ class ViewController: UIViewController {
                 outputString += "8"
             case "9","w","x","y","z":
                 outputString += "9"
+            case "\n":
+                outputString += "\n"
             default:
                 outputString += ""
             }
@@ -66,14 +69,14 @@ class ViewController: UIViewController {
             if outputString.count == 3 || outputString.count == 7 {
                 outputString += "-"
             }
-
-
+            
+            
         }
         
         messageOutput.text = outputString
     }
     
-
-
+    
+    
 }
 
