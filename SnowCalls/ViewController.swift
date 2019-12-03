@@ -26,6 +26,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         // Make this class be the delegate for the input text view
         messageInput.delegate = self
+        
+        // Give the focus to the input text view when the program begins
+        messageInput.text = ""
+        messageOutput.text = ""
+        messageInput.becomeFirstResponder() // Set focus on input field
     }
     
     //MARK: Actions
