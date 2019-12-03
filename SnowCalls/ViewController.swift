@@ -8,21 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
     
     //MARK: Properties
     
     @IBOutlet weak var messageInput: UITextView!
-    
     @IBOutlet weak var messageOutput: UITextView!
     
     var numberOfCharacters = 0
     
     //MARK: Methods
     
+    // This method runs ONCE after the first view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Make this class be the delegate for the input text view
+        messageInput.delegate = self
     }
     
     //MARK: Actions
@@ -88,5 +91,14 @@ class ViewController: UIViewController {
             
             messageOutput.text += outputString + "\n"
         }
+    }
+    
+    // MARK: UIText View Delegate Methods
+    
+    // Called automatically when the contents of the text view are changed
+    func textViewDidChange(_ textView: UITextView) {
+        
+        // Reset the output text view
+        messageOutput.text = ""
     }
 }
