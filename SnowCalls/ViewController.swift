@@ -15,8 +15,6 @@ class ViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var messageInput: UITextView!
     @IBOutlet weak var messageOutput: UITextView!
     
-    var numberOfCharacters = 0
-    
     //MARK: Methods
     
     // This method runs ONCE after the first view loads
